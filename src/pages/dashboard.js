@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAuth } from "../Context/auth";
 import { parseCookies } from "nookies";
 function Dashboard() {
   const { user, logOut } = useAuth();
 
- /*  useEffect(() => {
-    api.get(`/user/${user?.id}`);
-  }, []); */
  
   return (
     <div>
@@ -22,6 +19,7 @@ export default Dashboard;
 
 export const getServerSideProps = async (ctx) => {
   const { ["nextauth.token"]: token } = parseCookies(ctx);
+ 
 
   if (!token) {
     return {

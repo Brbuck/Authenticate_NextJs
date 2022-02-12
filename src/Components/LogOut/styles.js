@@ -4,7 +4,7 @@ import Input from '../Input'
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
 
     display: flex;
     justify-content: center;
@@ -17,21 +17,24 @@ export const Form = styled.form`
     max-width: 600px;
     height: auto;
     padding: 20px;
-    border: 1px solid #333;
-
-    div{
-        margin: 10px 0px;
+    
+    h1{
+        text-align: center;
+        margin-bottom: 20px;
+        color: #f99b38;
     }
     
 `
 
 export const EditButton = styled(Button)`
-    background-color: orange;
+    background-color: #f99b38;
     color: #111;
-    margin-top: 10px;
+    margin-top: 20px;
 `
 
 export const EditInput = styled(Input)`
-    border-bottom: 1px solid #CCC;
+    border: 1px solid #111;
+    border-radius: 25px;
+    margin: 10px 0px;
     
 `

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import styled from "styled-components";
 import Teste from "../assets/YT_branco.png";
-//import { useAuth } from "../Context/auth";
+
 
 const Title = styled.h1`
   font-size: 50px;
@@ -28,7 +28,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+        {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
       </footer>
     </div>
   );

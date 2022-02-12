@@ -9,31 +9,25 @@ import { Container, Form, EditInput, EditButton } from "./styles";
 function LogOut() {
   const { register, handleSubmit } = useForm({});
 
-  
   async function createUser({ name, email, password }) {
     try {
       await api.post("/signup", { name, email, password });
       Router.push("/login");
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.error);
     }
   }
   return (
     <Container>
       <Form onSubmit={handleSubmit(createUser)}>
-        <div>
-          <EditInput type="text" {...register("name")} placeholder="Nome" />
-        </div>
-        <div>
-          <EditInput type="email" {...register("email")} placeholder="e-mail" />
-        </div>
-        <div>
-          <EditInput
-            type="password"
-            {...register("password")}
-            placeholder="Senha"
-          />
-        </div>
+        <h1>Log Out</h1>
+        <EditInput type="text" {...register("name")} placeholder="Nome" />
+        <EditInput type="email" {...register("email")} placeholder="e-mail" />
+        <EditInput
+          type="password"
+          {...register("password")}
+          placeholder="Senha"
+        />
         <EditButton type="submit">Enviar</EditButton>
       </Form>
     </Container>

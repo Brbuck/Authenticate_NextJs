@@ -1,35 +1,43 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import { useAuth } from "../../Context/auth"
+import {
+  Container,
+  Form,
+  EditInput,
+  EditButton,
+  Illustration,
+  Sign,
+} from "./styles";
 
-import { Container, Form, EditInput, EditButton } from "./styles";
+import { useAuth } from "../../Context/auth";
+import { useForm } from "react-hook-form";
 
 function LogIn() {
   const { register, handleSubmit } = useForm({});
 
-  const onSubmit = data => console.log(data);
   const { authenticat } = useAuth();
   async function SignIn({ email, password }) {
     try {
-      await authenticat({email, password});
+      await authenticat({ email, password });
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.error);
     }
   }
   return (
     <Container>
       <Form onSubmit={handleSubmit(SignIn)}>
-        <div>
+        <Illustration>
+          <h2>Welcome to user area</h2>
+        </Illustration>
+        <Sign className="form">
+          <h2>Welcome to Login</h2>
           <EditInput type="email" {...register("email")} placeholder="e-mail" />
-        </div>
-        <div>
           <EditInput
             type="password"
             {...register("password")}
             placeholder="Senha"
           />
-        </div>
-        <EditButton type="submit">Login</EditButton>
+          <EditButton type="submit">Login</EditButton>
+        </Sign>
       </Form>
     </Container>
   );
