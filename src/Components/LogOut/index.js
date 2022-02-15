@@ -1,6 +1,6 @@
 import React from "react";
 
-import { api } from "../../pages/api/api";
+import { api } from "../../services/api";
 import Router from "next/router";
 import { useForm } from "react-hook-form";
 

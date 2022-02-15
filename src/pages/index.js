@@ -1,9 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
-
 import styled from "styled-components";
-import Teste from "../assets/YT_branco.png";
 
+const Container = styled.div`
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const Title = styled.h1`
   font-size: 50px;
@@ -11,8 +15,6 @@ const Title = styled.h1`
 `;
 
 export default function Home() {
-  
-  
   return (
     <div>
       <Head>
@@ -22,9 +24,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <Image src={Teste} alt="Vercel Logo" width={100} height={30} />
-        <Title>Teste</Title>
-        <h1>Hello World</h1>
+        <Container>
+          <Title>Home</Title>
+        </Container>
       </main>
 
       <footer>
